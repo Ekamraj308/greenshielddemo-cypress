@@ -10,14 +10,18 @@ describe('Product Sorting', () => {
     })
   })
 
-  it('sorts products by Name A to Z', () => {
-    ProductsPage.sortBy('az')
+it('sorts products by Name A to Z', () => {
+  ProductsPage.sortBy('za')
+  ProductsPage.getProductNames().then((namesBefore) => {
 
-    ProductsPage.getProductNames().then((names) => {
-      const sorted = [...names].sort((a, b) => a.localeCompare(b))
-      expect(names).to.deep.equal(sorted)
+    ProductsPage.sortBy('az')
+    ProductsPage.getProductNames().then((namesAfter) => {
+      const expected = [...namesAfter].sort((a, b) => a.localeCompare(b))
+      expect(namesAfter).to.deep.equal(expected)
+      expect(namesAfter).to.not.deep.equal(namesBefore)
     })
   })
+})
 
   it('sorts products by Name Z to A', () => {
     ProductsPage.sortBy('za')
