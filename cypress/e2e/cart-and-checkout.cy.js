@@ -80,4 +80,23 @@ it('completes the cart workflow', () => {
   })
 })
 
+  // Negative test - not required by the assignment, added to cover a
+  // failure path. Checkout should block progress and show an error
+
+  it('blocks checkout and shows an error when customer info is missing', () => {
+    cy.fixture('products').then((products) => {
+      ProductsPage.addToCart(products.bikeLight.slug)
+      ProductsPage.goToCart()
+      CartPage.checkout()
+      CheckoutPage.verifyStepOneLoaded()
+
+      // Deliberately leave all fields empty and try to continue
+      CheckoutPage.continueToOverview()
+
+      // Should stay on step one, not advance to the overview
+      CheckoutPage.verifyStepOneLoaded()
+      cy.get('[data-test="error"]').should('be.visible')
+    })
+  })
+
 })
