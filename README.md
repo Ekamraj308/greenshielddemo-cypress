@@ -21,7 +21,7 @@ Main dependency: Cypress 15.20.1
 ## Verified
 
 Last run and confirmed passing on August 13, 2026, from a fresh clone 
-of this repository `git clone`, `npm install`, then both spec files, 
+of this repository `git clone`, `npm install`, then all three spec files, 
 8 tests total, no failures.
 
 Tested in Chrome via Cypress's default browser.
