@@ -24,8 +24,13 @@ when the customer info form is submitted empty.
 **Test Case #2** `cypress/e2e/product-sorting.cy.js`
 Tests all four sort options on the Products page name A-Z, name Z-A, 
 price low to high, price high to low, plus confirms the default sort on  
-page load. The A-Z test sorts Z-A first, then A-Z, so it actually proves 
-the order changes rather than just matching the page's default state.
+page load. The A-Z test sorts Z-A first, captures that order, then sorts 
+A-Z and captures again. 
+
+It asserts the second order is correctly A-Z, and separately asserts 
+it's different from the first capture, so the test can only pass if the
+sort genuinely changed something, not just because the page happened to 
+load in A-Z order already.
 
 ## A few things I would mention-
 
