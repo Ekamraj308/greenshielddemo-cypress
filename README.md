@@ -44,9 +44,8 @@ the file.
 the actual product on the site is "Sauce Labs Bolt T-Shirt". Treated as 
 a typo and tested against the real product name.
 
-**Login:** I used UI login. I looked into setting the session cookie 
-directly but SauceDemo's client-side session handling means the cookie 
-alone doesn't work without the actual login form running first.
+**Login:** I used UI login, since this is a small suite and it also 
+exercises the real login form as a side effect.
 
 **Selectors:** Everything uses data-test attributes, confirmed by 
 inspecting the real DOM rather than guessing. Products page uses 
