@@ -10,7 +10,7 @@ describe('Product Sorting', () => {
     })
   })
 
-it('sorts products by Name A to Z', () => {
+  it('sorts products by Name A to Z', () => {
   ProductsPage.sortBy('za')
   ProductsPage.getProductNames().then((namesBefore) => {
 
