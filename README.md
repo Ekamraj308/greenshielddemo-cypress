@@ -10,17 +10,22 @@ npx cypress open
 ```
 
 Then click the spec file you want to run in the Cypress window.
+
 ## What's in here
 
 **Test Case #1** `cypress/e2e/cart-and-checkout.cy.js`
 Covers the full cart and checkout workflow. Adds three items, removes one 
 via the product detail page, verifies button states across all six products, 
-and completes the order through to confirmation.
+and completes the order through to confirmation. 
+
+Also includes a test that checks checkout is blocked and an error shows up 
+when the customer info form is submitted empty.
 
 **Test Case #2** `cypress/e2e/product-sorting.cy.js`
 Tests all four sort options on the Products page name A-Z, name Z-A, 
 price low to high, price high to low, plus confirms the default sort on  
-page load.
+page load. The A-Z test sorts Z-A first, then A-Z, so it actually proves 
+the order changes rather than just matching the page's default state.
 
 ## A few things I would mention-
 
