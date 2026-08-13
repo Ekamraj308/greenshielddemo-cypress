@@ -18,8 +18,13 @@ gets regenerated from `package.json` on install.
 
 Main dependency: Cypress 15.20.1
 
+## Verified
 
-Then click the spec file you want to run in the Cypress window.
+Last run and confirmed passing on August 13, 2026, from a fresh clone 
+of this repository `git clone`, `npm install`, then both spec files, 
+8 tests total, no failures.
+
+Tested in Chrome via Cypress's default browser.
 
 ## What's in here
 
