@@ -9,6 +9,16 @@ npm install
 npx cypress open
 ```
 
+## Dependencies
+
+Everything needed is listed in `package.json`. Running `npm install` 
+pulls in Cypress and its supporting packages automatically — 
+`node_modules` isn't included in this repo since it's large and 
+gets regenerated from `package.json` on install.
+
+Main dependency: Cypress 15.20.1
+
+
 Then click the spec file you want to run in the Cypress window.
 
 ## What's in here
